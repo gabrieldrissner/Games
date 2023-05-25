@@ -3,6 +3,8 @@ package at.dga.firsgame;
 import org.newdawn.slick.*;
 
 public class Rectangles extends BasicGame {
+    private NewObject newObject;
+    private NewObject newObject2;
     private float xRectangle;
     private float yRectangle;
 
@@ -34,15 +36,18 @@ public class Rectangles extends BasicGame {
         this.speed = 3.0F;
         this.yCircle = 100;
 
+        this.newObject = new NewObject(100,100,5);
+        this.newObject2 = new NewObject(5,400,10);
 
     }
 
     @Override
     public void update(GameContainer gameContainer, int delta) throws SlickException {
         float ovalue = (float) delta / this.speed;
-        //this.xRectangle += ovalue;
-        //if (this.yCircle < 0
-        //this.yCircle += ovalue;
+
+
+        this.newObject.update(delta);
+        this.newObject2.update(delta);
 
         if (directionOval == DirectionOval.RIGHT) {
             this.xOval += (float) delta / this.speed;
@@ -111,6 +116,8 @@ public class Rectangles extends BasicGame {
         graphics.drawRect(this.xRectangle, this.yRectangle, 100, 100);
         graphics.drawOval(xCircle, yCircle, 50, 50);
         graphics.drawOval(xOval, yOval, 150, 50);
+        this.newObject.render(graphics);
+        this.newObject2.render(graphics);
     }
 
     public static void main(String[] argv) {
