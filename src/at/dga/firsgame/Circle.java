@@ -4,7 +4,8 @@ import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.SlickException;
 
-public class Rectangles implements Actor{
+public class Circle implements Actor{
+
 
 
     public void init(GameContainer gameContainer) throws SlickException {
